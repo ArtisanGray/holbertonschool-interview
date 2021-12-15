@@ -22,7 +22,7 @@ listint_t *insert_node(listint_t **head, int number)
 		*head = newNode;
 	tmp = *head;
 
-	for (i = 1; tmp->next != NULL && tmp->next->n < number; i++)
+	for (i = 1; tmp->next != NULL && tmp->next->n <= number; i++)
 		tmp = tmp->next;
 	nextNode = tmp->next;
 	tmp->next = newNode;
