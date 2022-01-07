@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""this module finds the minimum # of operations needed to complete a task."""
 
 
 def minOperations(n):
