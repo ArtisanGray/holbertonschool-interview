@@ -42,11 +42,11 @@ try:
             split = line.split(" ")
             size += int(split[8])
             codes.append(split[7])
-    if i == 10:
-        if isValid(line):
-            printLine(size, codes)
+        if i == 10:
+            if isValid(line):
+                printLine(size, codes)
             i = 0
-    i += 1
+        i += 1
 except KeyboardInterrupt:
     if isValid(line):
         split = line.split(" ")
