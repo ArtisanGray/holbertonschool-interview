@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""this module parses an input log."""
-import fileinput
+"""this module parses an input log.
+   prints out response codes received from the http GET request.
+"""
+import sys
 from collections import Counter
 
 
@@ -37,7 +39,7 @@ try:
     i = 0
     size = 0
     codes = []
-    for line in fileinput.input():
+    for line in sys.stdin:
         if isValid(line):
             split = line.split(" ")
             size += int(split[8])
@@ -48,8 +50,6 @@ try:
             i = 0
         i += 1
 except KeyboardInterrupt:
-    pass
-finally:
     if isValid(line):
         split = line.split(" ")
         codes.append(split[7])
