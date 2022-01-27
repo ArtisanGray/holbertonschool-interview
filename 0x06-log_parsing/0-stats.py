@@ -31,23 +31,23 @@ def unique(list1):
             unique_list.append(x)
     return unique_list
 
+if __name__ == "__main__":
+    try:
 
-try:
-
-    i = 0
-    size = 0
-    codes = []
+        i = 0
+        size = 0
+        codes = []
     for line in fileinput.input():
+            if isValid(line):
+                split = line.split(" ")
+                size += int(split[8])
+                codes.append(split[7])
+            if i == 10:
+                if isValid(line):
+                    printLine(size, codes)
+                i = 0
+            i += 1
+    except KeyboardInterrupt:
         if isValid(line):
             split = line.split(" ")
-            size += int(split[8])
-            codes.append(split[7])
-        if i == 10:
-            if isValid(line):
-                printLine(size, codes)
-            i = 0
-        i += 1
-except KeyboardInterrupt:
-    if isValid(line):
-        split = line.split(" ")
-        printLine(size, codes)
+            printLine(size, codes)
