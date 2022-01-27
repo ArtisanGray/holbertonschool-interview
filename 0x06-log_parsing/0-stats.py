@@ -49,6 +49,7 @@ try:
                 printLine(size, codes)
             i = 0
         i += 1
+    printLine(size, codes)
 except KeyboardInterrupt:
     if isValid(line):
         split = line.split(" ")
