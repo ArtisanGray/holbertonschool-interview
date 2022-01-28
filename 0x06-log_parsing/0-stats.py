@@ -10,7 +10,8 @@ def isValid(string):
     """returns whether or not a string should be skipped"""
     if string.count('\"') == 2 and string.count('[') == 1 and \
             string.count(']') == 1:
-        return True
+        if "GET /projects/260 HTTP/1.1" in string:
+            return True
     return False
 
 
@@ -44,7 +45,7 @@ try:
             split = line.split(" ")
             size += int(split[8])
             codes.append(split[7])
-        if i == 10:
+        if i == 9:
             if isValid(line):
                 printLine(size, codes)
             i = 0
