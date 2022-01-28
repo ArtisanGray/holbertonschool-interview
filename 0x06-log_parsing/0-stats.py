@@ -54,5 +54,4 @@ try:
 except KeyboardInterrupt:
     if isValid(line):
         split = line.split(" ")
-        codes.append(split[7])
         printLine(size, codes)
