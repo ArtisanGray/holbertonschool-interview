@@ -9,10 +9,10 @@ int is_palindrome(unsigned long n)
 {
 	unsigned long flip = 0, m = n;
 
-	while (mid != 0)
+	while (m != 0)
 	{
-		flip = (flip * 10) + (mid % 10);
-		mid = mid / 10;
+		flip = (flip * 10) + (m % 10);
+		m = m / 10;
 	}
 	if (flip == n)
 		return (1);
