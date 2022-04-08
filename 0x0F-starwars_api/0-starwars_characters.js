@@ -7,12 +7,12 @@ request(url, function (error, response, body) {
     console.error(error);
   }
   const data = JSON.parse(body).characters;
-  for (const car in data) {
-    request(data[car], (error, response, body) => {
+  data.forEach(lurl => {
+    request(lurl, (error, response, body) => {
       if (error) {
         console.error(error);
       }
       console.log(JSON.parse(body).name);
     });
-  }
+  });
 });
