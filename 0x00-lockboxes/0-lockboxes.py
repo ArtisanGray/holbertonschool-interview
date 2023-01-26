@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from collections import OrderedDict
 """this module determines if boxes can be unlocked."""
 
 
@@ -7,7 +6,7 @@ def canUnlockAll(boxes):
     """this class determines of a set of boxes can be unlocked."""
     if boxes is None:
         return False
-    isUnlocked = OrderedDict()
+    isUnlocked = {}
     i = 0
     for x in range(len(boxes)):
         isUnlocked[str(x)] = "False"
